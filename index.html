@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chalk-It</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Merriweather:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-4xl font-bold text-center mb-6">
+            Chalk-It
+        </h1>
+
+        <!-- Journal Entry Input Section -->
+        <div class="p-6 rounded-lg shadow-inner" style="background-color: #fefcf2; border: 1px solid #dccb99;">
+            <h2 class="text-2xl font-semibold mb-4">Write Your Entry</h2>
+            <textarea id="journalText"
+                      class="w-full focus:outline-none focus:ring-2 focus:ring-opacity-50"
+                      placeholder="How are you feeling today? What's on your mind?"></textarea>
+            <button id="saveEntryButton"
+                    class="mt-4 w-full button-vintage">
+                Save Entry
+            </button>
+            <div id="sentimentDisplay" class="mt-4 text-center text-lg font-medium sentiment-display hidden">
+                Analyzing sentiment...
+            </div>
+            <div id="feedbackDisplay" class="mt-2 text-center text-md feedback-display hidden">
+                <strong class="text-gray-700">AI Feedback:</strong> <span id="feedbackContent"></span>
+            </div>
+        </div>
+
+        <!-- Past Entries Section -->
+        <div class="mt-8">
+            <h2 class="text-2xl font-semibold mb-4">Past Entries</h2>
+            <div id="entriesContainer" class="space-y-4">
+                <!-- Journal entries will be loaded here -->
+                <p class="text-center text-gray-500" id="loadingEntries">Loading entries...</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
